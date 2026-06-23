@@ -4,8 +4,12 @@ jobs:
   terraform:
     runs-on: ubuntu-latest #Linux OS. we can have windows or MAC
     steps:
-      - name: setup actions
+
+      - name: checkout the code
+        uses: actions/checkout@v7
+
+      - name: setup terraform
         uses: hashicorp/setup-terraform@v4
 
-      - name: init
+      - name: run init
         run: terraform init
