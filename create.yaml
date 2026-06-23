@@ -1,0 +1,11 @@
+name: ec2-creation
+on: [push] 
+jobs:
+  terraform:
+    runs-on: ubuntu-latest #Linux OS. we can have windows or MAC
+    steps:
+      - name: setup actions
+        uses: hashicorp/setup-terraform@v4
+
+      - name: init
+        run: terraform init
